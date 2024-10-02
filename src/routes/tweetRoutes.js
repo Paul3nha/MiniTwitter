@@ -3,25 +3,25 @@ import express from 'express';
 
 // Importamos los controladores.
 import {
-  deleteTweetController,
-  getSingleTweetController,
-  getTweetsController,
-  getTweetsUserController,
-  newTweetController,
-  updateTweetController,
+  deleteTweetController, //func para borrar un tweet
+  getSingleTweetController, //func para ver un tweet en concreto
+  getTweetsController, //func para ver todos los tweets
+  getTweetsUserController, //func para conseguir todos los tweets de un usuario
+  newTweetController, //func para crear un nuevo tweet
+  updateTweetController, //func para actualizar un teet
 } from '../controllers/tweets/index.js';
 
 // Importamos los middlewares.
 import {
-  authUserController,
-  tweetExistsController,
-  userExistsController,
+  authUserController, //comprobamos q el usuario esta autorizado (q tiene token xq esta logueado)
+  tweetExistsController, //comprobar q existe un tweet con el id indicado
+  userExistsController, //comprobar q existe un usuario desde el token o desde los params
 } from '../middlewares/index.js';
 
 // Creamos un router.
 export const tweetRouter = express.Router();
 
-// Crear un tweet.
+// endpoint para crear un tweet.
 tweetRouter.post('/tweets', authUserController, newTweetController);
 
 // Obtener todos los tweets.

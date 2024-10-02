@@ -3,27 +3,27 @@ import express from 'express';
 
 // Importamos los controladores.
 import {
-  updateUserAvatarController,
-  updateUserController,
+  updateUserAvatarController, //func para actualizar el avatar
+  updateUserController, //actualizar un usuario
   editUserPassController,
-  getOwnUserController,
-  getUserProfileController,
-  loginUserController,
-  newUserController,
+  getOwnUserController, //obtener un usuario a través de un id
+  getUserProfileController, //obtener el perfil de un usuario
+  loginUserController, //loguear a un usuario ya registrado y validado
+  newUserController, //registar nuevo usuario
   sendRecoverPassController,
-  validateUserController,
+  validateUserController, //validar un usuario q se acaba de registrar (pasar el registrationCode)
 } from '../controllers/users/index.js';
 
 // Importamos los middlewares.
 import {
-  authUserController,
-  userExistsController,
+  authUserController, //comprobar q el usuario está logueado
+  userExistsController, //comprobar q el usuario existe
 } from '../middlewares/index.js';
 
 // Creamos un router.
 export const userRouter = express.Router();
 
-// Crear un usuario pendiente de activar.
+// endpoint para crear un usuario pendiente de activar.
 userRouter.post('/users/register', newUserController);
 
 // Validar a un usuario.
@@ -55,7 +55,7 @@ userRouter.put(
   updateUserController
 );
 
-// Editar el avatar de un usuario.
+// Editar el avatar de un usuario. --> como vamos a modificar algo, usamos PUT
 userRouter.put(
   '/users/avatar',
   authUserController,

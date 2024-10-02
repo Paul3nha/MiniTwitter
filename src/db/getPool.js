@@ -22,7 +22,7 @@ export const getPool = async () => {
         host: MYSQL_HOST,
         user: MYSQL_USER,
         password: MYSQL_PASSWORD,
-        port: MYSQL_PORT || 3306, //railway necesita un prto xq no es local
+        port: MYSQL_PORT || 3306, //railway necesita un prto xq no es local, así que lo ponemos a escuchar en uno q digamos o x defecto en el 3306 (que es el suyo)
       });
 
       // Crear la base de datos si no existe
