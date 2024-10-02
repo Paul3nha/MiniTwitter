@@ -1,6 +1,7 @@
 // Importamos el esquema.
 import { validateSchemaUtil } from '../../utils/validateSchemaUtil.js';
 import { newUserSchema } from '../../schemas/users/newUserSchema.js';
+import crypto from 'crypto';
 
 // Importamos los servicios.
 import { insertUserService } from '../../services/users/insertUserService.js';

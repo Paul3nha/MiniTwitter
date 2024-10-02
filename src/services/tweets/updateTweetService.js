@@ -1,5 +1,6 @@
 // Importar el módulo path.
 import path from 'path';
+import crypto from 'crypto';
 
 // Importar el módulo sharp.
 import sharp from 'sharp';

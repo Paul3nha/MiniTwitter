@@ -1,5 +1,6 @@
 // Importar el módulo bcrypt.
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcrypt'; //hashear
+import crypto from 'crypto'; //para crear las uuid, porque el crypto es modulo nativo asi q no hay q descargar libreria como uuuid
 
 // Importar los modelos.
 import {
